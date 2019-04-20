@@ -17,7 +17,7 @@ export class RentalListComponent implements OnInit {
   ngOnInit() {
     // tslint:disable-next-line:no-debugger
     // debugger;
-    this.rentalService.testFunction();
+    // this.rentalService.testFunction();
     const rentalObservable: Observable<Rental[]> = this.rentalService.getRentals();
 
     // tslint:disable-next-line:no-debugger
