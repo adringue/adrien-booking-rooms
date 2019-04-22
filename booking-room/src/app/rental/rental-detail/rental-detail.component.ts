@@ -2,7 +2,6 @@ import { Rental } from './../shared/rental.model';
 import { RentalService } from './../shared/rental.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'booking-rental-detail',
@@ -13,9 +12,7 @@ export class RentalDetailComponent implements OnInit {
   currentId: string;
   rental: Rental;
   constructor(private route: ActivatedRoute, private rentalService: RentalService) { }
-
   ngOnInit() {
-
     this.route.params.subscribe(
       (params) => {
         // tslint:disable-next-line:no-debugger
@@ -30,5 +27,5 @@ export class RentalDetailComponent implements OnInit {
       (rental: Rental) => {
         this.rental = rental;
       });
-    }
+  }
 }

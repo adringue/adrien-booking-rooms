@@ -31,6 +31,19 @@ class FakeDb {
         createAt: '24/12/2017'
       },
       {
+        id: '2',
+        title: 'Central Apartment',
+        city: 'San Francisco',
+        street: 'Times Square',
+        category: 'apartment',
+        image: 'http://via.placeholder.com/350X250',
+        bedrooms: 3,
+        shared: true,
+        description: 'very nice apartment',
+        dailyRate: 34,
+        createAt: '24/12/2017'
+      },
+      {
         id: '3',
         title: 'Central Apartment',
         city: 'Paris',
