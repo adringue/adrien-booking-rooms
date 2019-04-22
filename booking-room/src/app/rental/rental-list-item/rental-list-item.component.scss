@@ -1,29 +1,26 @@
 @import 'variables';
 /* Single card styles*/
-a{
-  &:hover, &:focus{
+a {
+  &:hover,
+  &:focus {
     text-decoration: none;
   }
 }
 .booking-card {
   border: none;
-
   .card-block {
     padding-top: 8px;
-
     .card-subtitle {
       margin: 0;
       font-weight: 500;
       font-size: 12px;
       text-transform: uppercase;
     }
-
     .card-title {
       font-size: 19px;
       margin: 3px 0;
       color: $main-text-color;
     }
-
     .card-text {
       font-size: 14px;
       font-weight: 300;

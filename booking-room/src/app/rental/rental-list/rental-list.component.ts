@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { RentalService } from '../shared/rental.service';
 import { Rental } from '../shared/rental.model';
 import { Observable } from 'rxjs';
-
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'booking-rental-list',
@@ -11,15 +10,12 @@ import { Observable } from 'rxjs';
 })
 export class RentalListComponent implements OnInit {
   rentals: Rental[] = [];
-
   constructor(private rentalService: RentalService) { }
-
   ngOnInit() {
     // tslint:disable-next-line:no-debugger
     // debugger;
     // this.rentalService.testFunction();
     const rentalObservable: Observable<Rental[]> = this.rentalService.getRentals();
-
     // tslint:disable-next-line:no-debugger
     // debugger;
     rentalObservable.subscribe(
@@ -35,8 +31,7 @@ export class RentalListComponent implements OnInit {
       () => {
         // tslint:disable-next-line:no-debugger
         // debugger;
-       }
+      }
     );
   }
-
 }

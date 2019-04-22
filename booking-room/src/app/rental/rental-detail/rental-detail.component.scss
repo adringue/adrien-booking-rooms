@@ -1,61 +1,57 @@
 @import 'variables';
-
-#rentalDetails{
-  .upper-section{
-    img{
+#rentalDetails {
+  .upper-section {
+    img {
       width: 100%;
     }
-
-  margin-bottom: 30px;
+    margin-bottom: 30px;
   }
-  .details-section{
+  .details-section {
     color: $main-text-color;
-    .rental{
-      &-type{
+    .rental {
+      &-type {
         font-size: 14px;
         font-weight: 300;
         text-transform: uppercase;
         margin: 0;
       }
-      &-title{
+      &-title {
         margin-bottom: 5px;
         font-size: 32px;
         font-weight: 700;
       }
-      &-city{
+      &-city {
         font-size: 14px;
         font-weight: 300;
         margin-bottom: 20px;
       }
-      &-room-info{
+      &-room-info {
         margin-bottom: 20px;
         font-weight: 300;
         font-size: 16px;
-        span{
+        span {
           margin-right: 10px;
         }
-        i{
+        i {
           margin-right: 2px;
         }
-
       }
-      &-description{
+      &-description {
         font-weight: 300;
         margin-bottom: 30px;
       }
-      &-assets{
-        .title{
+      &-assets {
+        .title {
           margin-bottom: 10px;
           font-weight: 700;
           font-size: 22px;
         }
-        span{
+        span {
           display: block;
           margin-bottom: 15px;
           font-weight: 300;
         }
       }
-
     }
   }
 }

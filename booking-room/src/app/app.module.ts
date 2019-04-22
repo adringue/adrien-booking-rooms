@@ -5,8 +5,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
 import { RentalComponent } from './rental/rental.component';
-
-
 const routes: Routes = [
 {path: '', redirectTo: '/rentals', pathMatch: 'full'},
 ];
