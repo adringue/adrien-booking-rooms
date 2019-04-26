@@ -12,5 +12,8 @@ shared: Boolean,
 description: {type: String, require: true},
 dailyRate: Number,
 createdAt: {type: String, default: Date.now()},
+user:{
+  type: Schema.Types.ObjectId, ref: 'User'
+}
 });
 module.exports= mongoose.model('Rental', rentalSchema);
