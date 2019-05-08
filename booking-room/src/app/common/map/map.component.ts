@@ -10,7 +10,7 @@ export class MapComponent implements OnInit {
   @Input() location: string;
   lat: number;
   lng: number;
-  isPositionErrorr = false;
+  isPositionError = false;
   constructor(private mapService: MapService, private ref: ChangeDetectorRef) { }
   ngOnInit() {
   }
@@ -21,7 +21,7 @@ export class MapComponent implements OnInit {
       this.ref.detectChanges();
     }, () => {
       //  error
-      this.isPositionErrorr = true;
+      this.isPositionError = true;
     });
   }
 }

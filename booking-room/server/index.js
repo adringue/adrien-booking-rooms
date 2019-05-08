@@ -13,7 +13,7 @@ mongoose.connect(config.DB_URI, {
   }).then(() => {
     console.log("connected to booking database");
     const fakeDb = new FakeDb()
-    fakeDb.seedDb();
+    // fakeDb.seedDb();
   })
   .catch((err) => {
     console.log(err);
