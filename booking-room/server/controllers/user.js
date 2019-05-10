@@ -38,7 +38,7 @@ exports.auth = function (req, res) {
         userId: result._id,
         username: result.username
       }, config.SECRET, {
-        expiresIn: '1h'
+        expiresIn: '3h'
       });
 
       console.log(jwtSign);
