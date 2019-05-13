@@ -1,3 +1,5 @@
+import { BookingService } from './../booking/shared/booking.service';
+import { HelperService } from './../common/service/helper.service';
 import { AuthGuard } from './../auth/shared/auth.guard';
 import { MapModule } from '../common/map/map.module';
 import { UppercasePipe } from './../common/pipes/uppercase.pipe';
@@ -13,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from 'ngx-pipes';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -37,9 +40,10 @@ const routes: Routes = [
     HttpClientModule,
     NgPipesModule,
     MapModule,
-    Daterangepicker
+    Daterangepicker,
+    FormsModule
   ],
-  providers: [RentalService]
+  providers: [RentalService, HelperService, BookingService]
 })
 export class RentalModule {
 
