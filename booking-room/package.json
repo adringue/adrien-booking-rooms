@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.5",
-    "@angular/animations": "^6.0.3",
+    "@angular/animations": "^6.1.10",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^6.0.3",
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@auth0/angular-jwt": "^2.1.0",
+    "@ng-bootstrap/ng-bootstrap": "^4.1.2",
     "@types/jquery": "^3.2.12",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
@@ -33,6 +34,7 @@
     "mongoose": "^5.5.2",
     "ng2-daterangepicker": "^2.0.12",
     "ngx-pipes": "^2.4.6",
+    "ngx-toastr": "^10.0.4",
     "nodemon": "^1.18.11",
     "rxjs-compat": "^6.4.0",
     "zone.js": "^0.8.26"
