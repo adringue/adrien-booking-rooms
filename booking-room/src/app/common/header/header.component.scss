@@ -35,4 +35,10 @@
     }
 
   }
+  a.dropdown-item{
+    font-size: 14px;
+    &:active, &:focus, &:hover{
+      background-color: $main-color;
+    }
+  }
 }
