@@ -17,5 +17,11 @@ export class HeaderComponent implements OnInit {
   }
   ngOnInit() {
   }
-
+  search(city: string) {
+   const cityWithoutEmptyStartSpace = city;
+  //  console.log(cityWithoutEmptyStartSpace);
+  //  console.log(decodeURI(`/rentals/${ cityWithoutEmptyStartSpace }/homes`));
+   cityWithoutEmptyStartSpace ?  this.router.navigate([`/rentals/${ cityWithoutEmptyStartSpace }/homes`]) :
+    this.router.navigate(['/rentals']);
+  }
 }

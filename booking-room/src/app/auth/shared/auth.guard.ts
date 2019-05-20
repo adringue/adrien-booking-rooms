@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
     this.router.navigate(['/login']);
   }
   private isLoginOrRegister(): boolean {
-    if (this.url.includes('login') || this.url.includes('register')) {
+    if (this.url.includes('login') || this.url.includes('register') ) {
       return true;
     }
     return false;

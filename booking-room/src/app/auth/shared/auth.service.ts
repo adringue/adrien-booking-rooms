@@ -19,7 +19,7 @@ export class AuthService {
   constructor(private http: HttpClient) {
     // bei refreshing the page , decodedToken is not defined, lets fix
 
-    this.decodedToken = JSON.parse(localStorage.getItem('token_decoded')) || new DecodedToken();
+    this.decodedToken = JSON.parse(localStorage.getItem('booking-auth-decoded')) || new DecodedToken();
   }
 
 
