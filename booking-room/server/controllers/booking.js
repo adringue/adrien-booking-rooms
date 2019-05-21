@@ -56,7 +56,7 @@ exports.createBooking = function (req, res) {
             $push: {
               bookings: booking
             }
-          },function(){});
+          }, function () {});
           return res.json({
             startAt: booking.startAt,
             endAt: booking.endAt
@@ -75,7 +75,22 @@ exports.createBooking = function (req, res) {
       // return res.json({booking,foundRental});
     });
 };
-
+exports.getUserBookings = function (req, res) {
+  const user = res.locals.user;
+  Booking
+    .where({
+      user
+    })
+    .populate('rental')
+    .exec(function (err, foundBooking) {
+      if (err) {
+        return res.status(422).send({
+          errors: normalizeErrors(err.errors)
+        });
+      }
+      return res.json(foundBooking);
+    });
+};
 function isValidBooking(proposedBooking, rental) {
   let isValid = false;
   // console.log("proposed:",proposedBooking);
