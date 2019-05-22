@@ -1,0 +1,39 @@
+<section id="userRentals">
+  <h1 class="page-title">
+    My Rentals
+  </h1>
+  <div class="row">
+    <ng-container *ngIf="rentals && rentals.length>0">
+      <div *ngFor="let rental of rentals; let i=index" class="col-md-4">
+        <div class="card text-center">
+          <div class="card-block">
+            <h4 class="card-title">{{rental.title}} - {{rental.city | ucwords}}</h4>
+              <a routerLink="/rentals/{{rental._id}}" class="btn adj-margin btn-ghost">Go To Rental</a>
+            <span *ngIf="rental.bookings.length>0">
+                <booking-manage-rental-booking [bookings]="rental.bookings">
+
+                </booking-manage-rental-booking>
+            </span>
+            <div class="card-footer text-muted">
+              <p>Created at {{rental.createdAt | dateStringToDatePipe | formatDate}} </p>
+              <button type="button" class="btn btn-booking btn-delete" (click)="rentalDeleteIndex=i" *ngIf="rentalDeleteIndex !=i">
+                Delete
+              </button>
+              <div *ngIf="rentalDeleteIndex ===i">
+                 <p class="confirm-message">Do you confirm delete?</p>
+                   <button class="btn btn-success" (click)="deleteRental(rental._id)" >Yes</button>
+                   <button class="btn btn-danger" (click)="rentalDeleteIndex=undefined">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <div *ngIf="rentals && rentals.length ===0" class="col-md-8">
+      <div class="alert alert-warning">
+        You have no rentals....
+        <a routerLink="/rentals/new" class="btn btn-booking">Register Rental</a>
+      </div>
+    </div>
+  </div>
+</section>

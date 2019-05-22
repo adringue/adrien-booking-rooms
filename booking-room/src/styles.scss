@@ -14,32 +14,67 @@ p {
     margin-bottom: 20px;
   }
 }
+
 .page-title {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
 }
-.apartment{
-color: #a72da3;
+
+.apartment {
+  color: #a72da3;
 }
-.condo{
-color: #d68000;
+
+.condo {
+  color: #d68000;
 }
-.home{
-color: #bf1818;
+
+.home {
+  color: #bf1818;
 }
-.clickable{
+
+.clickable {
   cursor: pointer;
 }
 
+.btn-ghost {
+  background-color: transparent !important;
+  color: $main-color !important;
+  border: 1.2px solid $main-color !important;
+  font-size: 12px;
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    color: $main-color;
+    border: 1.2px solid $main-color;
+  }
+}
 
-
+// btn-booking{
+//   background-color: $main-color;
+//   border-color: $main-color;
+// }
 button.btn-booking {
   background-color: $main-color;
   border-color: $main-color;
   color: white;
   padding: 15px 30px;
-  font-size: 20px !important;
+  font-size: 20px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $main-color !important;
+    background-color: $main-color !important;
+  }
+}
+
+.btn.btn-booking {
+  background-color: $main-color;
+  border-color: $main-color;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
 
   &:hover,
   &:focus,
