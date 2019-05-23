@@ -55,7 +55,7 @@
           <div class="form-group">
             <label for="shared">Shared</label>
             <input name="shared" [(ngModel)]="newRental.shared" type="checkbox" class="form-control" id="shared"
-              required>
+            >
           </div>
           <button [disabled]="!rentalCreateForm.form.valid" (click)="createRental()" type="button"
             class="btn btn-booking">Submit</button>
