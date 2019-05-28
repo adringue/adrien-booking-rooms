@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls[fieldName].errors.required;
   }
   login() {
-    console.log(this.loginForm.value);
     this.auth.login(this.loginForm.value).subscribe(
       (token) => {
         this.router.navigate(['/rentals']);

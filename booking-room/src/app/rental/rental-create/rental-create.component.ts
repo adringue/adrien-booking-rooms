@@ -23,7 +23,6 @@ export class RentalCreateComponent implements OnInit {
     this.newRental.shared = false;
   }
   createRental() {
-    console.log(this.newRental);
     this.rentalService.createRental(this.newRental).subscribe(
       (rental: Rental) => {
         this.router.navigate([`/rentals/${rental._id}`]);
