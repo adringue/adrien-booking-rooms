@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'variables';
+@import 'rental-detail';
 
 html,
 body,
@@ -42,6 +43,7 @@ p {
   color: $main-color !important;
   border: 1.2px solid $main-color !important;
   font-size: 12px;
+
   &:hover,
   &:focus {
     background-color: transparent;
@@ -129,5 +131,22 @@ button.btn-booking {
     background-color: rgba(0, 0, 0, 0.5);
     margin-top: 50px;
     letter-spacing: 1px;
+  }
+}
+
+.inline {
+  display: inline-block;
+}
+
+.inline-margin-left {
+  margin-left: 7px;
+}
+
+.inline {
+
+  .btn-editable {
+    margin-left: 10px;
+    color: white;
+    font-size: 12px;
   }
 }

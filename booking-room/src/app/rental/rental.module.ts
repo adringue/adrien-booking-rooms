@@ -1,3 +1,5 @@
+import { RentalGuard } from './shared/rental.guard';
+import { EditableModule } from './../common/components/editable/editable.module';
 import { BookingService } from './../booking/shared/booking.service';
 import { HelperService } from './../common/service/helper.service';
 import { AuthGuard } from './../auth/shared/auth.guard';
@@ -12,12 +14,13 @@ import { CommonModule } from '@angular/common';
 import { RentalService } from './shared/rental.service';
 import { RentalDetailComponent } from './rental-detail/rental-detail.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgPipesModule } from 'ngx-pipes';
+import { NgPipesModule, UcWordsPipe } from 'ngx-pipes';
 import { Daterangepicker } from 'ng2-daterangepicker';
 import { RentalDetailBookingComponent } from './rental-detail/rental-detail-booking/rental-detail-booking.component';
 import { FormsModule } from '@angular/forms';
 import { RentalSearchComponent } from './rental-search/rental-search.component';
 import { RentalCreateComponent } from './rental-create/rental-create.component';
+import { RentalUpdateComponent } from './rental-update/rental-update.component';
 
 const routes: Routes = [
   {
@@ -25,6 +28,7 @@ const routes: Routes = [
     children: [
       { path: '', component: RentalListComponent },
       { path: 'new', component: RentalCreateComponent, canActivate: [AuthGuard]},
+      { path: ':rentalId/edit', component: RentalUpdateComponent, canActivate: [AuthGuard, RentalGuard]},
       { path: ':rentalId', component: RentalDetailComponent},
       { path: ':city/homes', component: RentalSearchComponent},
     ],
@@ -39,7 +43,8 @@ const routes: Routes = [
     UppercasePipe,
     RentalDetailBookingComponent,
     RentalSearchComponent,
-    RentalCreateComponent
+    RentalCreateComponent,
+    RentalUpdateComponent
   ],
   imports: [CommonModule,
     RouterModule.forChild(routes),
@@ -47,9 +52,10 @@ const routes: Routes = [
     NgPipesModule,
     MapModule,
     Daterangepicker,
-    FormsModule
+    FormsModule,
+    EditableModule
   ],
-  providers: [RentalService, HelperService, BookingService]
+  providers: [RentalService, HelperService, BookingService, UcWordsPipe, RentalGuard]
 })
 export class RentalModule {
 

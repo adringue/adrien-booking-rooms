@@ -1,0 +1,98 @@
+<section id="rentalDetails" *ngIf="rental">
+  <div class="upper-section">
+    <div class="row">
+      <div class="col-md-6"><img src="{{rental.image}}" alt=""></div>
+      <div class="col-md-6">
+        <!-- will be placed with map!!! -->
+        <booking-map
+        [location]="rental.city+', '+rental.country+', '+rental.street"
+        [locationSubject]="locationSubject"
+        ></booking-map>
+      </div>
+    </div>
+  </div>
+  <div class="details-section">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="rental">
+          <h2 class="rental-type {{rental.category}}">
+            Shared
+            <booking-editable-select (entityUpdated)="updateRental(rental._id, $event)"
+            [style]="{'display': 'inline-block'}"
+            [className]="'rental-shared'"
+              [(entity)]="rental" [options]="[true,false]" [field]="'shared'">
+            </booking-editable-select>
+
+            <booking-editable-select (entityUpdated)="updateRental(rental._id, $event)" [className]="'rental-category'"
+              [(entity)]="rental" [options]="rentalCategories" [field]="'category'">
+            </booking-editable-select>
+
+          </h2>
+          <div class="rental-owner">
+            <img src="assets/images/water.jpg" alt="">
+            <span>{{rental.user.username}}</span>
+          </div>
+          <booking-editable-input (entityUpdated)="updateRental(rental._id, $event)" [className]="'rental-title'"
+            [(entity)]="rental" [field]="'title'" [type]="text">
+          </booking-editable-input>
+          <!-- <h2 class="rental-city">{{rental.city | ucwords}}</h2> -->
+          <booking-editable-input
+          [transformView]="transformLocation"
+          (entityUpdated)="updateRental(rental._id, $event)" [className]="'rental-country'"
+          [(entity)]="rental" [field]="'country'">
+        </booking-editable-input>
+          <booking-editable-input
+          [transformView]="transformLocation"
+          (entityUpdated)="updateRental(rental._id, $event)" [className]="'rental-street'"
+            [(entity)]="rental" [field]="'street'">
+          </booking-editable-input>
+          <booking-editable-input (entityUpdated)="updateRental(rental._id, $event)"
+          [transformView]="transformLocation"
+          [className]="'rental-city'"
+            [(entity)]="rental" [field]="'city'">
+          </booking-editable-input>
+          <booking-editable-input (entityUpdated)="updateRental(rental._id, $event)"
+          [transformView]="transformLocation"
+          [className]="'rental-dailyRate'"
+          [type]="'number'"
+            [(entity)]="rental" [field]="'dailyRate'">
+          </booking-editable-input>
+          <div class="rental-room-info">
+            <span><i class="fa fa-building"></i>
+              <booking-editable-input (entityUpdated)="updateRental(rental._id, $event)" [className]="'rental-bedrooms'"
+                [type]="'number'" [(entity)]="rental" [style]="{'display': 'inline-block'}" [field]="'bedrooms'">
+              </booking-editable-input>
+              bedrooms
+            </span>
+            <span><i class="fa fa-user"></i>{{countBedroomAssets(4)}} guests</span>
+            <span><i class="fa fa-bed"></i>{{countBedroomAssets(2)}} beds</span>
+          </div>
+
+          <booking-editable-textarea (entityUpdated)="updateRental(rental._id, $event)"
+            [className]="'rental-description'" [(entity)]="rental" [field]="'description'" [rows]="'6'" [cols]="'50'">
+          </booking-editable-textarea>
+          <hr>
+          <div class="rental-assets">
+            <h3 class="title">Assets</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <span><i class="fa fa-asterisk"></i>Cooling</span>
+                <span><i class="fa fa-thermometer"></i>Heating</span>
+                <span><i class="fa fa-location-arrow"></i>Iron</span>
+              </div>
+              <div class="col-md-6">
+                <span><i class="fa fa-desktop"></i>Working area</span>
+                <span><i class="fa fa-cube"></i>Washing machine</span>
+                <span><i class="fa fa-cube"></i>Dishwasher</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <booking-rental-detail-booking [rental]="rental"></booking-rental-detail-booking>
+      </div>
+    </div>
+  </div>
+</section>
+

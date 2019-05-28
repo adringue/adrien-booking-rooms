@@ -41,7 +41,7 @@ export class RentalSearchComponent implements OnInit {
   }
   allRentalsContainsCity(): boolean {
     const containOnlyCity = this.rentals.filter(rental =>
-      rental.city === this.city
+      rental.city.includes(this.city)
     );
     if (this.rentals.length === containOnlyCity.length) {
       return true;

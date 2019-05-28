@@ -81,10 +81,6 @@ export class RentalDetailBookingComponent implements OnInit {
   openConfirmModal(content) {
     this.errors = [];
     this.modalRef = this.modalService.open(content);
-    // tslint:disable-next-line:no-unused-expression
-    // this.picker.datePicker;
-    // tslint:disable-next-line:no-debugger
-    // debugger;
   }
 
   createBooking() {

@@ -1,0 +1,20 @@
+<div class="editable-margin " [ngStyle]="style">
+  <select *ngIf="isActiveInput" class="{{className}}" (keydown.escape)="cancelUpdate()"
+  (keyup.enter)="updateEntity()" [(ngModel)]="entity[entityField]">
+      <option [selected]="!entity[entityField]===undefined" disabled>-------</option>
+    <option *ngFor="let option of options" [ngValue]="option">{{option}}</option>
+  </select>
+  <!-- <p> entity: {{entity.country}}, entity[entityfield]: {{entity[entityField]}} ,entityfield:{{entityField}} </p> -->
+  <span *ngIf="!isActiveInput" class="inline {{className}}"> {{entity[entityField]}}</span>
+  <div class="inline">
+    <button *ngIf="!isActiveInput" class="btn btn-sm btn-warning btn-editable" (click)="isActiveInput=true">
+      Edit
+    </button>
+    <button (click)="updateEntity()" *ngIf="isActiveInput" class="btn btn-sm btn-success btn-editable">
+      Save
+    </button>
+    <button *ngIf="isActiveInput" class="btn btn-sm btn-danger btn-editable" (click)="cancelUpdate()">
+      Cancel
+    </button>
+  </div>
+</div>
