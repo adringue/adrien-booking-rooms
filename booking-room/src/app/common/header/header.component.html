@@ -2,7 +2,7 @@
   <a class="navbar-brand" routerLink="/rentals">Booking <img src="favicon.ico"></a>
   <div class="form-inline">
     <input #citySearch (keyup)="search(citySearch.value)" class="form-control mr-sm-2 booking-search" type="search"
-      placeholder="Search" aria-label="Search">
+      placeholder="Enter City Name" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0 btn-booking-search" type="button">Search</button>
   </div>
   <button (click)="search(citySearch.value)" class="navbar-toggler" type="button" data-toggle="collapse"

@@ -4,6 +4,7 @@ export class Rental {
   static readonly CATEGORIES = ['house', 'apartment', 'condo'];
   _id: string;
   title: string;
+  country: string;
   city: string;
   street: string;
   category: string;
