@@ -11,9 +11,10 @@
             <input type="text" name="title" [(ngModel)]="newRental.title" class="form-control" id="title" required>
           </div>
           <div class="form-group">
-              <label for="country">Country</label>
-              <input name="country" [(ngModel)]="newRental.country" type="text" class="form-control" id="country" required>
-            </div>
+            <label for="country">Country</label>
+            <input name="country" [(ngModel)]="newRental.country" type="text" class="form-control" id="country"
+              required>
+          </div>
           <div class="form-group">
             <label for="city">City</label>
             <input name="city" [(ngModel)]="newRental.city" type="text" class="form-control" id="city" required>
@@ -30,9 +31,10 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="image">Image</label>
-            <input type="file" name="image" class="form-control" id="image" placeholder="Upload file..."
-              (change)="handleImageChange()">
+            <!-- <label for="image">Image</label> -->
+            <booking-image-upload
+            (imageError)="handleImageError()"
+            (imageUploaded)="handleImageUpload($event)"></booking-image-upload>
           </div>
           <div class="form-group">
             <label for="bedrooms">Bedrooms</label>
@@ -58,10 +60,9 @@
           </div>
           <div class="form-group">
             <label for="shared">Shared</label>
-            <input name="shared" [(ngModel)]="newRental.shared" type="checkbox" class="form-control" id="shared"
-            >
+            <input name="shared" [(ngModel)]="newRental.shared" type="checkbox" class="form-control" id="shared">
           </div>
-          <button [disabled]="!rentalCreateForm.form.valid" (click)="createRental()" type="button"
+          <button [disabled]="!rentalCreateForm.form.valid || !newRental.image" (click)="createRental()" type="button"
             class="btn btn-booking">Submit</button>
         </form>
         <div *ngIf="errors.length>0" class="alert alert-danger">

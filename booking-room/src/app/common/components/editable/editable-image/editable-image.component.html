@@ -1,0 +1,8 @@
+<img *ngIf="!isActiveInput" class="editable-image"  [src]="entity[entityField]">
+<booking-image-upload
+(imageLoadedToContainer)="handleImageLoad()"
+(imageError)="handleImageError()"
+(imageUploaded)="handleImageUpload($event)"
+(croppingCancelled)="cancelUpdate()"
+>
+</booking-image-upload>

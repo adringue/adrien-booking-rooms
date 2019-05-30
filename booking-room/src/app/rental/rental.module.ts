@@ -1,3 +1,4 @@
+import { ImageUploadModule } from './../common/components/image-upload/image-upload.module';
 import { RentalGuard } from './shared/rental.guard';
 import { EditableModule } from './../common/components/editable/editable.module';
 import { BookingService } from './../booking/shared/booking.service';
@@ -53,7 +54,8 @@ const routes: Routes = [
     MapModule,
     Daterangepicker,
     FormsModule,
-    EditableModule
+    EditableModule,
+    ImageUploadModule
   ],
   providers: [RentalService, HelperService, BookingService, UcWordsPipe, RentalGuard]
 })

@@ -13,8 +13,6 @@ export class TokenInterceptor implements HttpInterceptor {
   constructor(public authService: AuthService) { }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token = this.authService.getAuthToken();
-  // tslint:disable-next-line:no-debugger
-  // debugger;
     if (token) {
       request = request.clone({
         setHeaders: {

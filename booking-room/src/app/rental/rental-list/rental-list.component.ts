@@ -1,7 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { RentalService } from '../shared/rental.service';
-import { Rental } from '../shared/rental.model';
-import { Observable } from 'rxjs';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import {
+  RentalService
+} from '../shared/rental.service';
+import {
+  Rental
+} from '../shared/rental.model';
+import {
+  Observable
+} from 'rxjs';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'booking-rental-list',
@@ -10,27 +19,16 @@ import { Observable } from 'rxjs';
 })
 export class RentalListComponent implements OnInit {
   rentals: Rental[] = [];
-  constructor(private rentalService: RentalService) { }
+  constructor(private rentalService: RentalService) {}
   ngOnInit() {
-    // tslint:disable-next-line:no-debugger
-    // debugger;
-    // this.rentalService.testFunction();
-    const rentalObservable: Observable<Rental[]> = this.rentalService.getRentals();
-    // tslint:disable-next-line:no-debugger
-    // debugger;
+    const rentalObservable: Observable < Rental[] > = this.rentalService.getRentals();
     rentalObservable.subscribe(
       (rentals: Rental[]) => {
-        // tslint:disable-next-line:no-debugger
-        // debugger;
         this.rentals = rentals;
       },
       (err) => {
-        // tslint:disable-next-line:no-debugger
-        // debugger;
       },
       () => {
-        // tslint:disable-next-line:no-debugger
-        // debugger;
       }
     );
   }
