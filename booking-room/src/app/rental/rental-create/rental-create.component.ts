@@ -32,4 +32,10 @@ export class RentalCreateComponent implements OnInit {
       }
     );
   }
+  handleImageUpload(imageUrl: string) {
+this.newRental.image = imageUrl;
+  }
+  handleImageError() {
+  this.newRental.image = '';
+  }
 }

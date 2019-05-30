@@ -19,7 +19,7 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-  ],
+   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),

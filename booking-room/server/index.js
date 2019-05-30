@@ -4,10 +4,11 @@ const express = require('express'),
   config = require('./config'),
   Rental = require('./models/rental'),
   FakeDb = require('./fake-db'),
+  path = require('path');
   rentalRoutes = require('./routes/rentals'),
   userRoutes = require('./routes/users'),
   bookingRoutes = require('./routes/bookings'),
-  path = require('path');
+  imageUploadRoutes=require('./routes/image-upload'),
 mongoose.connect(config.DB_URI, {
     useNewUrlParser: true
   }).then(() => {
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.use('/api/v1/rentals', rentalRoutes);
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/bookings', bookingRoutes);
+app.use('/api/v1',imageUploadRoutes);
 if (process.env.NODE_ENV === 'production') {
   const appPath = path.join(__dirname, '..', 'dist/booking-room');
   app.use(express.static(appPath));

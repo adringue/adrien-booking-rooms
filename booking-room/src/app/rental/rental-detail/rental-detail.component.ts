@@ -15,9 +15,7 @@ export class RentalDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (params) => {
-        // tslint:disable-next-line:no-debugger
-        // debugger;
-        // this.currentId = params['rentalId'];
+      
         this.getRental(params['rentalId']);
       }
     );
