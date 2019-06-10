@@ -11,11 +11,11 @@
       <label>
         Dates
       </label>
-      <input placeholder="Enter Date" type="text" class="form-control daterangepicker-input" name="daterangeInput" daterangepicker
+      <input type="text" class="form-control daterangepicker-input" name="daterangeInput" daterangepicker
         [options]="options" (selected)="selectedDate($event, daterange)" />
       <div class="form-group">
         <label for="guests"></label>
-        <input placeholder="Enter Number of Guests" type="number" class="form-control" id="guests" aria-describedby="emailHelp"
+        <input type="number" class="form-control" id="guests" aria-describedby="emailHelp"
           [(ngModel)]="newBooking.guests" name="guests" required>
       </div>
     </form>
