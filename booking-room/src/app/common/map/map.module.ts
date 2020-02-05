@@ -8,7 +8,7 @@ import { CamelizePipe } from 'ngx-pipes';
   imports: [
     CommonModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAIEzXWpn7H78ywKZBQbYr07FROTTe3Nyw'
+      apiKey: ''
     })
   ],
   exports: [MapComponent],
