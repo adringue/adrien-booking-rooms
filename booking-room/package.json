@@ -58,7 +58,7 @@
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^11.13.6",
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "bootstrap": "^4.3.1",
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
